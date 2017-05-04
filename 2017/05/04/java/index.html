@@ -96,7 +96,7 @@ java的基础知识点整理。👱">
 java的基础知识点整理。👱">
 <meta property="og:image" content="http://ojwxhsl56.bkt.clouddn.com/blog/20170430/165054446.jpg">
 <meta property="og:image" content="http://ojwxhsl56.bkt.clouddn.com/blog/20170501/222309749.jpg">
-<meta property="og:updated_time" content="2017-05-03T16:39:07.190Z">
+<meta property="og:updated_time" content="2017-05-03T16:43:17.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基础知识点">
 <meta name="twitter:description" content="java基础 （HeadFristJava笔记）
@@ -392,12 +392,15 @@ java的基础知识点整理。👱">
 <li>类是对象的蓝图。</li>
 <li>对象是已知的事物，对象是类的具体体现，举例来说对象就好比是电话薄里面的一比数据</li>
 <li>对象本身已知的事物被称为“<strong>实例变量</strong>”</li>
-<li><p>对象可以执行的动作被称为 <strong>方法</strong><br><br><br>##<strong>第3~4章</strong>：变量和对象的行为 </p>
-<ul>
-<li><p><strong>变量</strong>：变量分为primitive<strong>主数据类型</strong> 和<strong>引用数据类型</strong>。<br>例如int，double，等基本数据类型就是主数据类型，(整型：byte,int,short,long<br>浮点型:double,float,字符型: char布尔型:boolean)例如我有一个Dog类，我生成一个myDog对象，Dog就是引用数据类型，</p>
+<li>对象可以执行的动作被称为 <strong>方法</strong></li>
+</ul>
+<h2 id="第3-4章：变量和对象的行为"><a href="#第3-4章：变量和对象的行为" class="headerlink" title="第3~4章：变量和对象的行为"></a>第3~4章：变量和对象的行为</h2><ul>
+<li><p><strong>变量</strong>：变量分为primitive<strong>主数据类型</strong> 和<strong>引用数据类型</strong>。<br> 例如int，double，等基本数据类型就是主数据类型，(整型：byte,int,short,long<br>浮点型:double,float,字符型: char布尔型:boolean)例如我有一个Dog类，我生成一个myDog对象，Dog就是引用数据类型，</p>
 </li>
-<li><p><strong>对象的行为</strong> ：对象有 <strong>状态</strong>和<strong>行为</strong> 两种属性，分别由<strong>实例变量</strong> 和 <strong>方法</strong>来表示，类定义对象的所知和所为，对象的所知是 <strong>实例变量</strong>，对象的所为是 <strong>方法</strong>。<br>实例变量是声明在类中的 实例变量在初始化时就算你不给他赋值或者没有调用set方法，它也会有默认值，<code>int -0，boolean -false，references -null</code>,局部变量是声明在方法中中的，局部变量在使用前是必须被初始化的。<br></p>
-<h2 id="第5-6章-：超强力方法和使用java函数库"><a href="#第5-6章-：超强力方法和使用java函数库" class="headerlink" title="第5~6章 ：超强力方法和使用java函数库"></a>第5~6章 ：超强力方法和使用java函数库<br></h2></li>
+<li><p><strong>对象的行为</strong> ：对象有 <strong>状态</strong>和<strong>行为</strong> 两种属性，分别由<strong>实例变量</strong> 和 <strong>方法</strong>来表示，类定义对象的所知和所为，对象的所知是 <strong>实例变量</strong>，对象的所为是 <strong>方法</strong>。<br>实例变量是声明在类中的 实例变量在初始化时就算你不给他赋值或者没有调用set方法，它也会有默认值，<code>int -0，boolean -false，references -null</code>,局部变量是声明在方法中中的，局部变量在使用前是必须被初始化的。</p>
+</li>
+</ul>
+<h2 id="第5-6章-：超强力方法和使用java函数库"><a href="#第5-6章-：超强力方法和使用java函数库" class="headerlink" title="第5~6章 ：超强力方法和使用java函数库"></a>第5~6章 ：超强力方法和使用java函数库</h2><ul>
 <li><strong>在java的API中，类是被包装在包中，要使用API中的类，你必须知道它被放在哪个包中</strong></li>
 <li><p>将String类型的变量Guess转换成int类型的变量的方法 <code>int guess = Integer.parstInt(Guess)</code>  </p>
 </li>
@@ -408,9 +411,7 @@ java的基础知识点整理。👱">
 <li><p>ArrayList是java API的类，继承自java.util类，是java函数库中数百个类中的一个，ArrayList类里面有很多方法，例如<strong>add(Object elem)</strong>向list中加入对象参数,<strong>remove(int index)</strong>移除此列表中指定位置上的元素，详细见–<a href="http://tool.oschina.net/apidocs/apidoc?api=jdk-zh" title="jdk文档" target="_blank" rel="external">jdk文档</a>.<br>ArrayList的声明例子<code>ArrayList&lt;Egg&gt; myList = new ArrayList&lt;Egg&gt;()</code>翻译过来是创建一个Egg类型的list，它的名称叫myList,</p>
 </li>
 <li>import相当于节省了调用javaAPI的包名代码，例如<code>import java.util.ArrayList</code>和不加import<code>java.util.ArrayList&lt;Dog&gt; list = new java.util.ArrayList&lt;Dog&gt;()</code>是一样的的，如果不加import就不管在声明，用作参数都需要加上包名，加import就是为了简化代码。</li>
-<li>布尔表达式:<strong>“与”</strong>和<strong>“或”</strong>运算符(&amp;&amp;,||), <strong>不等于</strong>运算符(!=,!)  <br><br></li>
-</ul>
-</li>
+<li>布尔表达式:<strong>“与”</strong>和<strong>“或”</strong>运算符(&amp;&amp;,||), <strong>不等于</strong>运算符(!=,!)  </li>
 </ul>
 <h2 id="第7-8章：继承与多态"><a href="#第7-8章：继承与多态" class="headerlink" title="第7~8章：继承与多态"></a>第7~8章：继承与多态</h2><ul>
 <li>继承的意义：减少重复代码，增强代码的可维护性，</li>
@@ -663,7 +664,7 @@ var duoshuoQuery = {short_name:"zyshuai"};
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第1-2章：类与对象"><span class="nav-number">1.</span> <span class="nav-text">第1~2章：类与对象:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第5-6章-：超强力方法和使用java函数库"><span class="nav-number">2.</span> <span class="nav-text">第5~6章 ：超强力方法和使用java函数库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第7-8章：继承与多态"><span class="nav-number">3.</span> <span class="nav-text">第7~8章：继承与多态</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第1-2章：类与对象"><span class="nav-number">1.</span> <span class="nav-text">第1~2章：类与对象:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第3-4章：变量和对象的行为"><span class="nav-number">2.</span> <span class="nav-text">第3~4章：变量和对象的行为</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第5-6章-：超强力方法和使用java函数库"><span class="nav-number">3.</span> <span class="nav-text">第5~6章 ：超强力方法和使用java函数库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第7-8章：继承与多态"><span class="nav-number">4.</span> <span class="nav-text">第7~8章：继承与多态</span></a></li></ol></div>
             
 
           </div>
