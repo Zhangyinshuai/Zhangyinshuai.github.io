@@ -96,7 +96,9 @@ java的基础知识点整理。👱">
 java的基础知识点整理。👱">
 <meta property="og:image" content="http://ojwxhsl56.bkt.clouddn.com/blog/20170430/165054446.jpg">
 <meta property="og:image" content="http://ojwxhsl56.bkt.clouddn.com/blog/20170501/222309749.jpg">
-<meta property="og:updated_time" content="2017-05-12T14:24:23.263Z">
+<meta property="og:image" content="http://ojwxhsl56.bkt.clouddn.com/blog/20170515/204838425.jpg">
+<meta property="og:image" content="http://ojwxhsl56.bkt.clouddn.com/blog/20170515/220147690.jpg">
+<meta property="og:updated_time" content="2017-05-15T14:26:52.265Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基础知识点">
 <meta name="twitter:description" content="java基础 （HeadFristJava笔记）
@@ -464,7 +466,53 @@ class PetOwner{
 </ol>
 </li>
 </ul>
-<h2 id="第9-10章：对象的生命周期与“静态”的方法和变量"><a href="#第9-10章：对象的生命周期与“静态”的方法和变量" class="headerlink" title="第9~10章：对象的生命周期与“静态”的方法和变量"></a>第9~10章：对象的生命周期与“静态”的方法和变量</h2><h3 id="重要概念：堆-heap-和栈-stack-构造器，对象的生命周期-垃圾收集器GC，静态-static-的变量和方法，-包装类，"><a href="#重要概念：堆-heap-和栈-stack-构造器，对象的生命周期-垃圾收集器GC，静态-static-的变量和方法，-包装类，" class="headerlink" title="重要概念：堆(heap)和栈(stack),构造器，对象的生命周期,垃圾收集器GC，静态(static)的变量和方法， 包装类，"></a>重要概念：堆(heap)和栈(stack),构造器，对象的生命周期,垃圾收集器GC，静态(static)的变量和方法， 包装类，</h3><p>/<br><strong>流程控制</strong>: </p>
+<h2 id="第9章：构造器和垃圾回收器"><a href="#第9章：构造器和垃圾回收器" class="headerlink" title="第9章：构造器和垃圾回收器"></a>第9章：构造器和垃圾回收器</h2><h3 id="重要概念：堆-heap-和栈-stack-构造器，对象的生命周期-垃圾收集器GC，super和this，"><a href="#重要概念：堆-heap-和栈-stack-构造器，对象的生命周期-垃圾收集器GC，super和this，" class="headerlink" title="重要概念：堆(heap)和栈(stack),构造器，对象的生命周期,垃圾收集器GC，super和this，"></a>重要概念：堆(heap)和栈(stack),构造器，对象的生命周期,垃圾收集器GC，super和this，</h3><ul>
+<li>栈(stack)：一种<strong>先进后出</strong>的线性结构，和队列(先进先出)一样都是重要的线性结构表，在java中栈空间主要来保存<strong>方法调用和局部变量</strong></li>
+<li>堆(heap):一种可垃圾回收的生存空间，所有的<strong>对象</strong>都存活在堆上</li>
+<li><p>构造器：构造器也叫构造函数或者构造方法，是一种和类同名，并且没用返回值的方法。</p>
+<blockquote>
+<p>构造器带有你在初始化对象时会执行的程序代码。也就是新建一个对象会被执行。就算你没有自己写一个构造器，编译器也会帮你写一个无参的。</p>
+</blockquote>
+<p>  构造器的关键作用：</p>
+<p>  一. 能在对象能够被赋值给引用之前就执行。</p>
+  <pre>
+   public class Duck{
+          public Duck(){System.out.println("Quack");}
+
+      public class UseDuck{
+      public static void main(String[] args){
+          Duck d = new Duck();
+      }
+      }    输出Quack </pre>
+
+<p>  二. 使用构造函数来初始化对象的状态</p>
+<p>  所以根据这个特点可以知道构造函数可以重载，也就是说你可以拥有一个以上的构造函数，但是有个约定，参数需要不同，如果参数相同，参数的顺序不同也是可以的。</p>
+</li>
+<li><p>父类以及继承与构造器之间的关系：简单的说构造器能继承吗？答案是能，但是又比一般的继承多一点东西，<strong>在创建新对象时，所有继承下来的构造器都会执行，直到执行到Object这个类为止(我们都知道Object是祖先类)</strong> <img src="http://ojwxhsl56.bkt.clouddn.com/blog/20170515/204838425.jpg" alt="mark">     </p>
+</li>
+<li><p>super()与super.的区别：super关键字是用来调用父类的方法的，而super()是调用父类的构造器，super.是调用父类的一般方法。<strong>注意对super()的调用必须是构造函数的第一条语句</strong>      </p>
+</li>
+<li><p>this关键字是对对象本身的引用，有以下几个用法：</p>
+<ol>
+<li>使用this()来从某个构造器调用同一个类的另外一个构造器，例如this();调用默认的构造器，this(参数)调用带参数的构造器。</li>
+<li>限定当前对象的数据域变量。一般用于方法内的局部变量与对象的数据域变量同名的情况。如 this.num = num。this.num 表示当前对象的数据域变量 num，而 num 表示方法中的局部变量。</li>
+<li>注意this()只能用在构造器中，且必须是第一句， </li>
+</ol>
+</li>
+<li><p>super()与this()不能同时出现，</p>
+</li>
+<li><p>对象有以下3种情况会被GC回收：</p>
+<ol>
+<li>引用变量永久离开对象的范围 <pre><code>public class StackRef{<br>public void foof(){<br>barf();<br>}<br>public void barf(){<br>Duck d = new Duck();<br>}<br>}</code></pre><code> <img src="http://ojwxhsl56.bkt.clouddn.com/blog/20170515/220147690.jpg" alt="mark"></code></li>
+</ol>
+<ul>
+<li>引用被赋值到其他的对象上<br><pre>public class ReRef{<br>Duck d = new Duck();<br>public void go(){<br>d = new Duck();<br>}<br>}<p></p>新的duck会放在堆上，只要ReRe活着，d就没事，但是调用了go();后，d被引用到了其他的Duck，第一个Duck就等着垃圾回收了。</pre></li>
+</ul>
+</li>
+<li><p>直接将引用设定为null，<pre><code>public class ReRef{<br>Duck d = new Duck;<br>public void go(){<br>d = null;<br>}<br>}<br>d被设定null后，就好像没用操作对象的遥控器一样。<br></code></pre> </p>
+</li>
+</ul>
+<h2 id="第10章：静态和数字格式化"><a href="#第10章：静态和数字格式化" class="headerlink" title="第10章：静态和数字格式化"></a>第10章：静态和数字格式化</h2><p>/<br><strong>流程控制</strong>: </p>
 <ol>
 <li>条件语句（if..else,  if….）</li>
 </ol>
@@ -673,7 +721,7 @@ var duoshuoQuery = {short_name:"zyshuai"};
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第1-2章：类与对象"><span class="nav-number">1.</span> <span class="nav-text">第1~2章：类与对象:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第3-4章：变量和对象的行为"><span class="nav-number">2.</span> <span class="nav-text">第3~4章：变量和对象的行为</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第5-6章-：超强力方法和使用java函数库"><span class="nav-number">3.</span> <span class="nav-text">第5~6章 ：超强力方法和使用java函数库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第7-8章：继承与多态"><span class="nav-number">4.</span> <span class="nav-text">第7~8章：继承与多态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重要概念：继承，重写-发生在继承形态-，重载-发生在一个类中-，多态，抽象类，抽象方法，OBjiect类，接口。"><span class="nav-number">4.1.</span> <span class="nav-text">重要概念：继承，重写(发生在继承形态)，重载(发生在一个类中)，多态，抽象类，抽象方法，OBjiect类，接口。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第9-10章：对象的生命周期与“静态”的方法和变量"><span class="nav-number">5.</span> <span class="nav-text">第9~10章：对象的生命周期与“静态”的方法和变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重要概念：堆-heap-和栈-stack-构造器，对象的生命周期-垃圾收集器GC，静态-static-的变量和方法，-包装类，"><span class="nav-number">5.1.</span> <span class="nav-text">重要概念：堆(heap)和栈(stack),构造器，对象的生命周期,垃圾收集器GC，静态(static)的变量和方法， 包装类，</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第1-2章：类与对象"><span class="nav-number">1.</span> <span class="nav-text">第1~2章：类与对象:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第3-4章：变量和对象的行为"><span class="nav-number">2.</span> <span class="nav-text">第3~4章：变量和对象的行为</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第5-6章-：超强力方法和使用java函数库"><span class="nav-number">3.</span> <span class="nav-text">第5~6章 ：超强力方法和使用java函数库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第7-8章：继承与多态"><span class="nav-number">4.</span> <span class="nav-text">第7~8章：继承与多态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重要概念：继承，重写-发生在继承形态-，重载-发生在一个类中-，多态，抽象类，抽象方法，OBjiect类，接口。"><span class="nav-number">4.1.</span> <span class="nav-text">重要概念：继承，重写(发生在继承形态)，重载(发生在一个类中)，多态，抽象类，抽象方法，OBjiect类，接口。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第9章：构造器和垃圾回收器"><span class="nav-number">5.</span> <span class="nav-text">第9章：构造器和垃圾回收器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重要概念：堆-heap-和栈-stack-构造器，对象的生命周期-垃圾收集器GC，super和this，"><span class="nav-number">5.1.</span> <span class="nav-text">重要概念：堆(heap)和栈(stack),构造器，对象的生命周期,垃圾收集器GC，super和this，</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第10章：静态和数字格式化"><span class="nav-number">6.</span> <span class="nav-text">第10章：静态和数字格式化</span></a></li></ol></div>
             
 
           </div>
