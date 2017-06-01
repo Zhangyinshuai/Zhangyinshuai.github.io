@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="如何使用git和github,来源：udacity博客，来源：未知。。。">
+<meta name="description" content="如何使用git和github,来源：udacity详细介绍，来源：廖雪峰的git教程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用git和github">
 <meta property="og:url" content="http://yoursite.com/2017/03/28/GITandGitHub/index.html">
 <meta property="og:site_name" content="张银的大草原">
-<meta property="og:description" content="如何使用git和github,来源：udacity博客，来源：未知。。。">
-<meta property="og:image" content="http://ojwxhsl56.bkt.clouddn.com/blog/20170328/173540060.png">
-<meta property="og:updated_time" content="2017-04-14T02:29:31.782Z">
+<meta property="og:description" content="如何使用git和github,来源：udacity详细介绍，来源：廖雪峰的git教程">
+<meta property="og:image" content="http://ojwxhsl56.bkt.clouddn.com/blog/20170601/153416069.png">
+<meta property="og:updated_time" content="2017-06-01T12:28:08.326Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用git和github">
-<meta name="twitter:description" content="如何使用git和github,来源：udacity博客，来源：未知。。。">
-<meta name="twitter:image" content="http://ojwxhsl56.bkt.clouddn.com/blog/20170328/173540060.png">
+<meta name="twitter:description" content="如何使用git和github,来源：udacity详细介绍，来源：廖雪峰的git教程">
+<meta name="twitter:image" content="http://ojwxhsl56.bkt.clouddn.com/blog/20170601/153416069.png">
 
 
 
@@ -381,27 +381,36 @@
       
 
       
-        <p><a href="https://cn.udacity.com/course/how-to-use-git-and-github--ud775" target="_blank" rel="external">如何使用git和github</a>,来源：udacity<br><a href="http://blog.a0z.me/2014/05/21/GitBeginning/#导言" target="_blank" rel="external">博客</a>，来源：未知。。。</p>
+        <p><a href="https://cn.udacity.com/course/how-to-use-git-and-github--ud775" target="_blank" rel="external">如何使用git和github</a>,来源：udacity<br><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">详细介绍</a>，来源：廖雪峰的git教程</p>
 <a id="more"></a>
-<p><strong>什么是版本控制呢？</strong></p>
+<p><strong>版本控制</strong></p>
 <blockquote>
-<p>用来管理一个文件或者若干文件内容不断变化，不断更新，以便将来随时查阅以前的版本的系统。例如网页设计师需要保存某一页面布局中分所有修订版本，再例如毕业论文需要不断修改，等等。</p>
+<p>用来管理一个文件或者若干文件内容不断变化，不断更新，以便将来随时查阅以前的版本的系统。例如网页设计师需要保存某一页面布局中分所有修订版本，再例如毕业论文需要不断修改，等等。<br>git是目前最先进的版本控制系统，<a href="https://zh.wikipedia.org/wiki/Git" target="_blank" rel="external">详细介绍</a></p>
 </blockquote>
-<p> <strong>git是什么？</strong></p>
-<blockquote>
-<p>git是目前最先进的版本控制系统，<a href="https://zh.wikipedia.org/wiki/Git" target="_blank" rel="external">详细介绍</a></p>
-</blockquote>
-<p><strong>git操作</strong>：</p>
+<p>##一些必须搞懂的概念##<br><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013745374151782eb658c5a5ca454eaa451661275886c6000" target="_blank" rel="external"> 工作区和暂存区</a>，<a href="http://www.liaoxuefeng.comwiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374829472990293f16b45df14f35b94b3e8a026220c5000" target="_blank" rel="external">管理修改</a>,  <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000" target="_blank" rel="external">远程仓库</a></p>
+<h2 id="git操作："><a href="#git操作：" class="headerlink" title="git操作："></a>git操作：</h2><ul>
+<li><p>比较两个文件不相同的地方，两种方法<br>1.windowsCMD‘： fc 文件名 空格 文件名  <code>EG:fc game_new.js game_old.js</code> <br>2.git :diff  -u文件名 空格 文件名 <code>EG:diff -u game_new.js game_old.js</code> -u是标准区别格式，为了更好的阅读。</p>
 <ul>
-<li><p>比较两个文件不相同的地方，用windows自带的工具也可以<br><br>windows‘： fc 文件名 空格 文件名  <code>EG:fc game_new.js game_old.js</code> <br><br>git :diff  -u文件名 空格 文件名 <code>EG:diff -u game_new.js game_old.js</code> -u是标准区别格式，为了更好的阅读。</p>
-<ul>
-<li><p>查看修改的日志 git log，可以查看什么时候，谁，修改的什么东西。<br><img src="http://ojwxhsl56.bkt.clouddn.com/blog/20170328/173540060.png" alt="mark"></p>
-</li>
-<li><p>有待补充（以后要用的时候再学，(●ˇ∀ˇ●)）</p>
-</li>
-<li></li>
+<li><code>git log</code>，查看修改的日志 <br>可以查看什么时候，谁，修改的什么东西。如果嫌输出信息太多，看得眼花缭乱的，可以试试加上<code>--pretty=oneline</code>参数：<br><img src="http://ojwxhsl56.bkt.clouddn.com/blog/20170601/153416069.png" alt="mark"></li>
 </ul>
 </li>
+</ul>
+<p>第一个显示的就是当前版本，上图aooend GPL就是当前版本，前面的那一串数字是他的id</p>
+<ul>
+<li><code>git init</code>初始化一个仓库</li>
+<li><p><code>git add xxx.xxx</code>和<code>git commit</code>提交文件到仓库<br>分两步：<br>1.<code>git add xxx.xxx</code>添加文件到仓库  2. <code>git commit</code>把文件提交到仓库。注意<code>git commit</code>一般使用后面要加上<code>-m</code>后面跟上提交说明<br>eg：<code>git commit -m &quot;add 3 files.&quot;</code></p>
+</li>
+<li><p><code>git reset</code>版本回退<br>有两种语法可以版本回退，1.<code>git reset --hard HEAD^</code>，在Git中，用HEAD表示当前版本，也就是最新的提交3628164…882e1e0（注意我的提交ID和你的肯定不一样），上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。2.<code>git reset --hard 3628164</code>,后面的输在就是他的id，用<code>git log</code>可以查看的，数字不用输入全部，前面几个就可以。</p>
+</li>
+<li><code>git reflog</code>查看命令历史<br>一个很好的用处是你想回退历史版本，但是不知道他的id，就可以查看命令历史，再找到他的id。</li>
+<li>撤销修改<ul>
+<li>场景1. 当你改乱了工作区某个文件的内容，想直接丢弃<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013745374151782eb658c5a5ca454eaa451661275886c6000" target="_blank" rel="external">工作区</a>的修改时，用命令<code>git checkout -- file</code></li>
+<li>场景2当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD file</code>,就回到了场景1，第二布按场景1操作。</li>
+<li>场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。</li>
+</ul>
+</li>
+<li><code>git rm</code> 删除文件</li>
+<li></li>
 </ul>
 
       
@@ -508,8 +517,17 @@ var duoshuoQuery = {short_name:"zyshuai"};
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/lion.jpg"
@@ -572,6 +590,22 @@ var duoshuoQuery = {short_name:"zyshuai"};
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git操作："><span class="nav-number">1.</span> <span class="nav-text">git操作：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
