@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="张银的大草原">
 <meta property="og:description" content="如何使用git和github,来源：udacity详细介绍，来源：廖雪峰的git教程">
 <meta property="og:image" content="http://ojwxhsl56.bkt.clouddn.com/blog/20170601/153416069.png">
-<meta property="og:updated_time" content="2017-06-01T12:28:08.326Z">
+<meta property="og:updated_time" content="2017-06-01T14:10:13.374Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用git和github">
 <meta name="twitter:description" content="如何使用git和github,来源：udacity详细介绍，来源：廖雪峰的git教程">
@@ -387,7 +387,7 @@
 <blockquote>
 <p>用来管理一个文件或者若干文件内容不断变化，不断更新，以便将来随时查阅以前的版本的系统。例如网页设计师需要保存某一页面布局中分所有修订版本，再例如毕业论文需要不断修改，等等。<br>git是目前最先进的版本控制系统，<a href="https://zh.wikipedia.org/wiki/Git" target="_blank" rel="external">详细介绍</a></p>
 </blockquote>
-<p>##一些必须搞懂的概念##<br><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013745374151782eb658c5a5ca454eaa451661275886c6000" target="_blank" rel="external"> 工作区和暂存区</a>，<a href="http://www.liaoxuefeng.comwiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374829472990293f16b45df14f35b94b3e8a026220c5000" target="_blank" rel="external">管理修改</a>,  <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000" target="_blank" rel="external">远程仓库</a></p>
+<p>##一些必须搞懂的概念##<br><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013745374151782eb658c5a5ca454eaa451661275886c6000" target="_blank" rel="external"> 工作区和暂存区</a>，<a href="http://www.liaoxuefeng.comwiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374829472990293f16b45df14f35b94b3e8a026220c5000" target="_blank" rel="external">管理修改</a>,  <a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000" target="_blank" rel="external">远程仓库</a>,<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013743862006503a1c5bf5a783434581661a3cc2084efa000" target="_blank" rel="external">分支管理</a></p>
 <h2 id="git操作："><a href="#git操作：" class="headerlink" title="git操作："></a>git操作：</h2><ul>
 <li><p>比较两个文件不相同的地方，两种方法<br>1.windowsCMD‘： fc 文件名 空格 文件名  <code>EG:fc game_new.js game_old.js</code> <br>2.git :diff  -u文件名 空格 文件名 <code>EG:diff -u game_new.js game_old.js</code> -u是标准区别格式，为了更好的阅读。</p>
 <ul>
@@ -410,7 +410,17 @@
 </ul>
 </li>
 <li><code>git rm</code> 删除文件</li>
-<li></li>
+<li><code>git clone</code>从远程库中克隆到本地。<br>注意：要克隆一个仓库，首先必须知道仓库的地址，然后使用<code>git clone</code>命令克隆。Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快。</li>
+<li>关于分支的操作:<ul>
+<li><code>git branch</code>查看所有分支 </li>
+<li><code>git branch &lt;name&gt;</code>创建分支</li>
+<li><code>git checkout &lt;name&gt;</code>切换分支</li>
+<li><code>git checkout -b&lt;name&gt;</code>创建+切换分支</li>
+<li><code>git merge &lt;name&gt;</code>合并某分支到当前分支</li>
+<li><code>git branch -d &lt;name&gt;</code>删除分支</li>
+</ul>
+</li>
+<li>das </li>
 </ul>
 
       
